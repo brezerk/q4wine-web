@@ -26,7 +26,13 @@ q4wine-helper
 *.gz
 *.bz2
 *.pyc
+*.pyo
 *.old
 *.bak
 settings.py
 data.json
+media/resume/
+docs/templatetags/markdown/
+*.swp
+*.swo
+*.sql

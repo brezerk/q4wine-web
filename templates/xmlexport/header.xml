@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<appdb_export version="1.0" action="{{ action }}">
+    {% if page and num_pages %}<page>
+        <current>{{ page }}</current>
+        <count>{{ num_pages }}</count>
+    </page>{% endif %}
+    {% if app_list %}<app-list>
+        {{ app_list|safe }}
+    </app-list>{% endif %}
+    {% if app_view %}{{ app_view|safe }}{% endif %}
+    {% if cat_view %}{{ cat_view|safe }}{% endif %}
+</appdb_export>

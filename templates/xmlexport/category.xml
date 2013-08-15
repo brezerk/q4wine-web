@@ -1,0 +1,33 @@
+    <category-list>
+        <category id="0">
+            <name>Main</name>
+            <desc></desc>
+        </category>
+        {% for cat in cat_list %}
+        <category id="{{ cat.catid }}">
+            <name>{{ cat.catname|escape|striptags|truncatewords:4 }}</name>
+            <desc>{{ cat.catdescription|escape|striptags|truncatewords:10 }}</desc>
+        </category>
+        {% endfor %}
+    </category-list>
+    {% if subcat_list %}
+    <subcategory-list>
+        {% for cat in subcat_list %}
+        <category id="{{ cat.catid }}">
+            <name>{{ cat.catname|escape|striptags|truncatewords:4 }}</name>
+            <desc>{{ cat.catdescription|escape|striptags|truncatewords:10 }}</desc>
+        </category>
+        {% endfor %}
+    </subcategory-list>
+    {% endif %}
+    {% if app_list %}
+    <app-list>
+        {% for app in app_list %}
+        <app id="{{ app.appid }}">
+            <name>{{ app.appname|escape|striptags|truncatewords:4 }}</name>
+            <desc>{{ app.description|escape|striptags|truncatewords:10 }}</desc>
+        </app>
+        {% endfor %}
+    </app-list>
+    {% endif %}
+

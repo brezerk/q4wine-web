@@ -1,0 +1,9 @@
+        <test id="{{ id }}">
+            <current>{% ifequal id curid %}1{% else %}0{% endifequal %}</current>
+            <distrib>{{ distrib|safe|removetags:"img hr div span h1 h2 h3 br p from table"|force_escape }}</distrib>
+            <date>{{ date|date:"M d Y" }}</date>
+            <wine>{{ winever }}</wine>
+            <instal>{{ installs}}</instal>
+            <run>{{ runs }}</run>
+            <rating>{{ rating }}</rating>
+        </test>

@@ -1,0 +1,63 @@
+{% extends 'main.html' %}
+{% load markup %}
+
+{% block content %}
+
+{% if viewDesc %}
+	 <h2>Description</h2><p>
+Q4Wine is a qt4[<a href='http://www.qtsoftware.com/'>1</a>] GUI for W.I.N.E.[<a href='http://winehq.org/'>2</a>]  It will help you manage wine prefixes and installed applications. It currently support for both <a href='/download/'>Linux</a> and <a href='/download/#freebsd'>FreeBSD</a> platforms.</p>
+<p>Q4Wine was initially written by <a href='/brezerk/'>Alexey S. Malakhov</a> aka <a href='/brezerk/'>John Brezerk</a>. General idea comes from <a href='http://sourceforge.net/projects/winetools/'>WineTools</a> scripts which were initially written by Frank Hendriksen.</p>
+<p>General features are:</p>
+<ul>
+<li>Can export QT color theme into wine colors settings.
+<li>Can easy work with different wine versions at same time;
+<li>Easy creating, deleting and managing prefixes (WINEPREFIX);
+<li>Easy controlling for wine process;
+<li>Autostart icons support;
+<li>Easy cd-image use;
+<li>You can extract icons from PE files (.exe .dll);
+<li>Easy backup and restore for managed prefixes.
+<li>Winetriks support.
+<li>And more... <a href='/documentation/en_us/04-general-gui-description.html'>Explore it!</a> ;)
+</ul>
+{% endif %}
+
+<h2>News</h2><p><table><tbody><tr><td align='center'><a href='/media/rss.xml'><img class='image' src='/media/images/feeds.png' alt='RSS Feed'></a></td><td valign='top'>Here is all news related to q4wine development stuff and its community life. <br>If you are involved into the q4wine development process, don't forget to subscribe to our <a href="/rss/">RSS</a> or <a href="/atom/">Atom</a> feed</a>.
+</td></tr></tbody></table>
+<p>
+{% if page_list.has_other_pages %}
+<table width='100%'><tbody><tr><td align='left'>
+{% if page_list.has_next %}
+<a href='/page/{{ page_list.next_page_number }}'>< Previous news</a>
+{% endif %}
+</td><td align='right'>
+{% if page_list.has_previous %}
+<a href='/page/{{ page_list.previous_page_number }}'>Next news ></a>
+{% endif %}
+</td></tr></tbody></table>
+{% endif %}
+</p>
+<p>
+{% for new in news %}
+<a name='{{ new.id }}'></a>
+<h2><a href='/news/{{ new.id }}'>{{ new.title|safe }}</a></h2><p>
+<p>Publication date: {{ new.date|date:"d M Y" }}</p>
+<p>
+{{ new.content|markdown:"safe" }}
+</p>
+{% endfor %}
+<p>
+{% if page_list.has_other_pages %}
+<table width='100%'><tbody><tr><td align='left'>
+{% if page_list.has_next %}
+<a href='/page/{{ page_list.next_page_number }}'>< Previous news</a>
+{% endif %}
+</td><td align='right'>
+{% if page_list.has_previous %}
+<a href='/page/{{ page_list.previous_page_number }}'>Next news ></a>
+{% endif %}
+</td></tr></tbody></table>
+{% endif %}
+</p>
+{% endblock %}
+

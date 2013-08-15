@@ -1,0 +1,14 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+<h2>Documentation index:</h2>
+
+<ul>
+{% for doc in docs %}
+<li><a href="{% url docs.views.show doc.language doc.slug %}">{{doc.title}}</a></li>
+{% endfor %}
+</ul>
+
+{% endblock %}
+

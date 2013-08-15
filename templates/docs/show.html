@@ -1,0 +1,14 @@
+{% extends 'main.html' %}
+{% load markup %}
+
+{% block title %}{{doc.title}}{% endblock %}
+
+
+{% block content %}
+<h3>{{doc.title}}</h3>
+
+<p>
+{{doc.text|markdown}}
+</p>
+{% endblock %}
+

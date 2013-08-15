@@ -1,0 +1,78 @@
+    <app id="{{ app.appid }}"{% if verid %} verid="{{ verid }}"{% endif %}>
+        <name>{{ app.appname|escape|striptags }}</name>
+        <desc>{% if test_info %}{{ app.description|escape|striptags }}{% else %}{{ app.description|escape|striptags|truncatewords:40 }}{% endif %}</desc>
+        <category>{{ app.catid }}</category>
+        <url>{{ app.webpage }}</url>
+        {% if versions %}<version-list>
+                {% for version in versions %}<version id="{{ version.versionid }}">
+                    <app-ver>{{ version.versionname }}</app-ver>
+                    <rating>{{ version.rating }}</rating>
+                    <wine-ver>{{ version.ratingrelease }}</wine-ver>
+                </version>{% endfor %}
+        </version-list>{% endif %}
+        {% if cat_list %}
+        <category-list>
+            <category id="0">
+            <name>Main</name>
+            <desc></desc>
+        </category>
+        {% for cat in cat_list %}
+        <category id="{{ cat.catid}}">
+            <name>{{ cat.catname|escape|striptags|truncatewords:5 }}</name>
+            <desc>{{ cat.catdescription|escape|striptags|truncatewords:15 }}</desc>
+        </category>
+        {% endfor %}
+        </category-list>{% endif %}
+        {% if test_info %}
+        {% for z in versions %}
+            {% if z.versionid == verid %}
+        <app-ver>{{ z.versionname }}</app-ver>
+        <license>{{ z.license }}</license>
+            {% endif %}
+        {% endfor %}
+        <test-result id='{{ test_info.testingid }}'>
+            <rating>{{ test_info.testedrating }}</rating>
+            <wine-ver>{{ test_info.testedrelease }}</wine-ver>
+            <works>{{ test_info.whatworks|safe|removetags:"img hr div span h1 h2 h3 br p from table font sub sup"|urlize|linebreaks|force_escape }}</works>;
+            <not-works>{{ test_info.whatdoesnt|safe|removetags:"img hr div span h1 h2 h3 br p from table font sub sup"|urlize|linebreaks|force_escape }}</not-works>
+            <not-tested>{{ test_info.whatnottested|safe|removetags:"img hr div span h1 h2 h3 br p from table font sub sup"|urlize|linebreaks|force_escape }}</not-tested>
+            <comment>{{ test_info.comments|safe|removetags:"img hr div span h1 h2 h3 br p from table font sub sup"|urlize|linebreaks|force_escape }}</comment>
+        </test-result>{% endif %}
+        {% if tests %}
+        <test-list>
+        {{ tests|safe }}
+        </test-list>{% endif %}
+        {% if bugs_list %}<bug-list>
+        {% for bug in bugs_list %}
+            <bug id="{{ bug.bug_id }}">
+                <desc>{{ bug.short_desc }}</desc>
+                <status>{{ bug.bug_status }}</status>
+                <resolution>{{ bug.resolution }}</resolution>
+            </bug>
+        {% endfor %}
+        </bug-list>{% endif %}
+        {% if notes_list %}
+        <comment-list>
+            {% for note in notes_list %}
+            <comment id="0">
+                <topic>{{ note.notetitle }}</topic>
+                <date>{{ note.submittime|date:"d M Y H:i" }}</date>
+                <autor>Anonymous</autor>
+                <parent>0</parent>
+                <message>{{ note.notedesc|safe|removetags:"img hr div span h1 h2 h3 br p from table font sub sup"|urlize|linebreaks|force_escape }}</message>
+            </comment>
+            {% endfor %}
+            {% for comment in comments_list %}
+            <comment id="{{ comment.commentid }}">
+                <topic>{{ comment.subject }}</topic>
+                <date>{{ comment.time|date:"d M Y H:i" }}</date>
+                <autor>Anonymous</autor>
+                <parent>{{ comment.parentid }}</parent>
+                <message>{{ comment.body|safe|removetags:"img hr div span h1 h2 h3 br p from table font sub sup"|urlize|linebreaks|force_escape }}</message>
+            </comment>
+            {% endfor %}
+
+
+        </comment-list>
+        {% endif %}
+    </app> 

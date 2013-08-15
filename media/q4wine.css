@@ -1,0 +1,213 @@
+body {
+	margin-left: 50px;
+	margin-top: 10px;
+	margin-right: 50px;
+	margin-bottom: 10px;
+	background-color: #d5d6d7;
+	color: #000000;
+	border: 1px solid #000;
+}
+
+.body{
+	background-color: #fff;
+}
+
+.headline {
+	background-image: url(images/headline.png);
+	repeat-x: x;
+	vertical-align: middle;
+}
+
+.headtext {
+  font-weight: bold;
+  color: #fff;
+}
+
+.menu { margin-top: 10px; margin-bottom: 10px; }
+
+.Lmenu_header {  text-align: right;  }
+
+.L_header { margin-left: 10px; padding-right: 5px; text-align: center; color: #fff; background: #446688; border-top: #20476E solid 1px; border-right: #20476E solid 1px; border-left: #20476E solid 1px; background-image: url('images/b.png'); background-repeat: repeat-x; padding-top: 3px; padding-bottom: 7px; }
+
+.resume_h { 
+    background: #E7E7E7;
+    border-bottom: 1px #B1B1B1 solid;
+    border-right: 1px #20476E solid;
+    border-left: 1px #20476E solid;
+    background-image: url('images/button.png');
+    background-repeat: repeat-x;
+    color: #1470A6;
+    padding-top: 3px;
+}
+
+.resume_h a { 
+    color: #0A3853;
+}
+
+.resume_h a:hover {
+    color: #1470A6;
+}
+
+.L_info { text-align: center; padding-top: 10px; color: #1470A6; background: #E7E7E7;  padding-bottom: 5px; 	border-bottom: 1px #B1B1B1 solid;
+	border-right: 1px #20476E solid;
+	border-left: 1px #20476E solid; margin-left: 10px; background-image: url('images/button.png'); background-repeat: repeat-x; padding-right: 8px; }
+
+.L_info_s {
+  text-align: center;
+  padding: 0px;
+  margin: 0px;
+  margin-left: 10px;
+  color: #1470A6;
+  background: #E7E7E7;
+  
+  border-bottom: 1px #B1B1B1 solid;
+  border-right: 1px #20476E solid;
+  border-left: 1px #20476E solid;
+  background-image: url('images/button.png');
+  background-repeat: repeat-x;
+  
+}
+
+.L_info_s input { width: 150px; border: 1px solid #616161; margin-top: 5px; }
+
+.L_info_s form {
+  padding: 0px;
+  margin: 0px;
+  padding-top: 10px;
+  padding-bottom: 15px;
+}
+
+.Lmenu_header ul{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	margin-left: 10px;
+}
+
+div{
+	margin: 0;
+	padding: 0;
+}
+
+.image {
+  margin-left: 10px;
+  margin-right: 5px;
+  text-align: center;
+}
+
+.Lmenu_header li{
+	margin: 0;
+	padding: 0;
+	text-align: left;
+	padding: 2px;
+	padding-left: 8px;
+	background: #E7E7E7;
+	border-bottom: 1px #B1B1B1 solid;
+	border-right: 1px #20476E solid;
+	border-left: 1px #20476E solid;
+	background-image: url('images/button.png'); background-repeat: repeat-x;
+}
+
+.Lmenu_header li:hover{
+	margin: 0;
+	padding: 0;
+	text-align: left;
+	padding: 2px;
+	padding-left: 8px;
+	background: #D4D4D4;
+	border-bottom: 1px #B1B1B1 solid;
+	border-right: 1px #20476E solid;
+	border-left: 1px #20476E solid;
+	background-image: none;
+}
+
+.content {
+	background-color: #fff;
+	border: 0px;
+	border-left: 1px #20476E solid;
+	margin: 10px;
+	padding: 10px;
+	padding-top: 10px;
+	margin-top: 0px;
+	text-align: justify;
+}
+
+.content h2{
+   margin: 0;
+   padding: 0;
+	color: #0057ae;
+}
+
+.content p{
+  margin-left: 15px;
+}
+
+.content li{
+  margin-left: 15px;
+  padding-left: 0px;
+}
+
+.content ul{
+  margin-left: 15px;
+  padding-left: 0px;
+}
+
+
+a:link { color: #1470A6; text-decoration: none; }
+a { color: #1470A6; text-decoration: none; }
+a:hover { color: #0A3853; text-decoration: none; }
+
+a img { border: 0px; }
+
+.sign{
+	text-align: center;
+	color: #898e79;
+	font-size: 8pt;
+	padding-top: 8px;
+	padding-bottom: 8px;
+}
+
+.tableBorder{
+	border: 1px #20476E solid;
+	border-collapse: collapse;
+	text-align: center;
+}
+
+.content td{
+	padding-left: 5px;
+}
+
+.uptodate{
+	 background-color: #e1efd4;
+}
+
+.old{
+	 background-color: #efdfd4;
+}
+
+pre {
+	 border: 1px #20476E dashed;
+	 background-color: #dee4ea;
+	 margin: 5px;
+	 padding: 5px;
+}
+
+.tableHead{
+	background-image: url('images/button.png'); background-repeat: repeat-x; background-color: #e7e7e7;
+}
+
+.toLeft{
+	 text-align: left;
+}
+
+.toRight{
+	 text-align: right;
+}
+
+.toCenter{
+	 text-align: center;
+}
+
+.coner_ad{
+    float: right;
+}
